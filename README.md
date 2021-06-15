@@ -6,7 +6,7 @@
 
 ### Introduction
 
-For this project, we will work with
+For this project, we worked with
 the [Tennis](https://github.com/Unity-Technologies/ml-agents/blob/master/docs/Learning-Environment-Examples.md#tennis)
 environment.
 
