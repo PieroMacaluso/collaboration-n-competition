@@ -1,0 +1,36 @@
+# Environment parameters
+
+unity_env_path: ./Tennis_Linux/Tennis.x86_64
+env: tennis
+model: maddpg
+state_size: 24
+action_size: 2
+action_min: -1
+action_max: 1
+random_seed: 4
+num_agents: 2
+
+# DDPG
+actor_layers: [ 128, 128 ]
+critic_layers: [ 128, 128 ]
+critic_lr: 0.001
+actor_lr: 0.001
+final_layer_init: 0.003
+
+# MADDPG
+device: cuda
+n_episodes: 5000
+batch_size: 256
+replay_mem_size: 1000000 # maximum capacity of replay memory
+gamma: 0.99 # Discount rate (gamma) for future rewards
+
+tau: 0.001 # parameter for soft target network updates
+update_every: 1
+target_update_every: 1
+learning_steps: 1
+gradient_clipping_critic: true
+gradient_clipping_actor: false
+
+# Miscellaneous
+results_path: results
+
