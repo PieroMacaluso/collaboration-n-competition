@@ -90,11 +90,10 @@ class MADDPG:
         current_agent.actor_optimizer.zero_grad()
 
         current_actor_output = current_agent.actor_local(states[agent_i])
-        curr_pol_vf_in = current_actor_output
         all_policy_actions = []
         for i, policy, s in zip(range(2), self.get_actors(), states):
             if i == agent_i:
-                all_policy_actions.append(curr_pol_vf_in)
+                all_policy_actions.append(current_actor_output)
             else:
                 all_policy_actions.append(policy(s))
         local_critic_input = torch.cat((*states, *all_policy_actions), dim=1)
